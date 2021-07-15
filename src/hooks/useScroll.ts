@@ -5,7 +5,7 @@ export default function useScroll(
   childRef: React.RefObject<HTMLElement>,
   callback: () => void
 ) {
-  console.log(parentRef, childRef);
+  console.log(parentRef.current, childRef.current);
 
   const observer: any = useRef();
 
@@ -15,9 +15,10 @@ export default function useScroll(
       rootMargin: "0px",
       threshold: 0,
     };
+
     observer.current = new IntersectionObserver(([target]) => {
       if (target.isIntersecting) {
-        console.log("intersected");
+        console.log("intersected", target);
         callback();
       }
     }, options);

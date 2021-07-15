@@ -9,9 +9,8 @@ function App() {
   // return <Input />;
   // return <Hover />;
   // return <List />;
-  // return <Debounce />;
-
-  return <Request />;
+  return <Debounce />;
+  // return <Request />;
 }
 
 export default App;

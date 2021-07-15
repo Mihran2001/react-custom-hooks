@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 export default function useRequest(request: any) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
-
   const [error, setError] = useState("");
 
   useEffect(() => {

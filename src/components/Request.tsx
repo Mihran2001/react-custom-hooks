@@ -3,11 +3,12 @@ import useDebounce from "../hooks/useDebounce";
 import axios from "axios";
 import useRequest from "../hooks/useRequest";
 
+function fetchTodos() {
+  return axios.get(`https://jsonplaceholder.typicode.com/todos`);
+}
+
 export default function Request() {
   const [todos, loading, error]: any = useRequest(fetchTodos);
-  function fetchTodos() {
-    return axios.get(`https://jsonplaceholder.typicode.com/todos`);
-  }
 
   if (loading) {
     return <h1>Loading in progress</h1>;
